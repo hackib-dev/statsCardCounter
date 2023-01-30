@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <title>Stats Preveiw Card</title>
+
+</head>
+
+<body class="darkblue">
+    <main class="all_contents">
+
+        <div class="left_contents blue">
+
+            <div class="left">
+                <div class="left_heading whitetxt">
+
+                    <h1> Get <span class="insights purpletxt">insights</span> that help your business grow.</h1>
+
+                </div>
+
+                <div class="left_paragraph slightgreytxt">
+                    <p>
+                        Discover the benefits of data analytics and make better decisions regarding revenue,
+                        customer experience, and overall efficiency.
+                    </p>
+                </div>
+
+                <div class="left_details ">
+                    <ul class="list">
+                        <li class="companies whitetxt">
+                            <span class="counter" value="10">0</span>
+                            <span> k+ </span>
+                            <span class="greytxt"> COMPANIES </span> 
+                        </li>
+
+                        <li class="templates whitetxt" >
+                            <span class="counter" value="314">0</span>
+                            <span class="greytxt">TEMPLATES</span> 
+                        </li>
+
+                        <li class="queries whitetxt" >
+                            <span class="counter" value="12">0</span>
+                            <span> M+ </span>
+                            <span class="greytxt">QUERIES</span> 
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right_contents purple">
+            <img class="right_images" src="./assets/images/image-header-desktop.jpg">
+
+        </div>
+
+    </main>
+</body>
+
+
+<script>
+
+    var valueDisplay = document.querySelectorAll('.counter');
+    var speed=10;
+
+    valueDisplay.forEach((valueGotten)=>{
+
+        function updateCount () {
+
+            var target = parseInt(valueGotten.getAttribute('value'));
+            
+            var count = parseInt(valueGotten.innerHTML);
+          
+            var increment = Math.floor(target/speed);
+
+            if (count < target){
+                valueGotten.innerHTML = count + increment;
+                setTimeout(updateCount,100);
+            }
+        }
+        updateCount(); 
+    })
+
+</script>
+
+</html>
